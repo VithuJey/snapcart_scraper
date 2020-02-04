@@ -1,0 +1,23 @@
+{
+  "name": "snapcart_scraper",
+  "version": "1.0.0",
+  "description": "A Scraper to scrape snapcart.lk",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VithuJey/snapcart_scraper.git"
+  },
+  "keywords": [
+    "snapcart",
+    "scraper"
+  ],
+  "author": "Vithushan Jey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VithuJey/snapcart_scraper/issues"
+  },
+  "homepage": "https://github.com/VithuJey/snapcart_scraper#readme"
+}
