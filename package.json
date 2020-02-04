@@ -4,7 +4,7 @@
   "description": "A Scraper to scrape snapcart.lk",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/VithuJey/snapcart_scraper/issues"
   },
-  "homepage": "https://github.com/VithuJey/snapcart_scraper#readme"
+  "homepage": "https://github.com/VithuJey/snapcart_scraper#readme",
+  "dependencies": {
+    "puppeteer": "^2.1.0"
+  }
 }
