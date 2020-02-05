@@ -1,10 +1,13 @@
-const express = require('express');
-const connectDB = require('./db/connect');
+const express = require("express");
+const connectDB = require("./db/connect");
 const app = express();
 
 connectDB();
+
 app.use(express.json({ extended: false }));
-// app.use('/api/userModel', require('./Api/User'));
+
+app.use('/api', require('./router/GroceryRouter'));
+
 const Port = process.env.Port || 3000;
 
-app.listen(Port, () => console.log('Server started'));
+app.listen(Port, () => console.log("Server started"));

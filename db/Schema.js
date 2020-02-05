@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const schema = mongoose.Schema;
 
-const grocery = new mongoose.Schema({
+const grocery = new schema({
   name: {
     type: String
   },
@@ -15,4 +16,6 @@ const grocery = new mongoose.Schema({
   }]
 });
 
-module.exports = Grocery = mongoose.model('grocery', grocery);
+mongoose.model('grocery', grocery);
+
+module.exports = mongoose;

@@ -29,14 +29,10 @@ ping()
           if ("vegetable" in URL) itemJson.type = "vegetable";
           else itemJson.type = "fruit";
           itemJson.weight = "1 kg";
-          itemJson.details = [
-            {
-              date: new Date().getDate(),
-              price: item.querySelector(
-                "div[class='col-sm-6'] > a > div > div[class='price-cont veg-content'] > div > span[class='price']"
-              )
-            }
-          ];
+          itemJson.date = new Date().getDate();
+          itemJson.price = item.querySelector(
+            "div[class='col-sm-6'] > a > div > div[class='price-cont veg-content'] > div > span[class='price']"
+          );
         } catch (error) {
           console.log(error);
         }
@@ -49,5 +45,5 @@ ping()
     console.log(itemsDetails);
     return itemsDetails;
   })
-  .then(itemsDetails = {})
+  .then((itemsDetails = {}))
   .catch(error => console.log(error));
