@@ -13,10 +13,9 @@ ping = async () => {
 };
 
 // Evaluate & scrape
-let itemsDetails;
 ping()
   .then(page => {
-    itemsDetails = page.evaluate(() => {
+    let itemsDetails = page.evaluate(() => {
       let items = [];
       let itemJson = {};
 
@@ -48,5 +47,7 @@ ping()
       return itemJson;
     });
     console.log(itemsDetails);
+    return itemsDetails;
   })
+  .then(itemsDetails = {})
   .catch(error => console.log(error));

@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/VithuJey/snapcart_scraper#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11",
     "puppeteer": "^2.1.0"
   }
 }
