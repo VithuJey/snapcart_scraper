@@ -1,12 +1,9 @@
 const express = require("express");
-const connectDB = require("./db/connect");
 const app = express();
-
-connectDB();
 
 app.use(express.json({ extended: false }));
 
-app.use('/api', require('./router/GroceryRouter'));
+app.use("/api", require("./Router/GroceryRouter"));
 
 const Port = process.env.Port || 3000;
 

@@ -4,7 +4,8 @@
   "description": "A Scraper to scrape snapcart.lk",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "test": "node ./Scraper/GroceryScraper"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.8.11",
+    "node-cron": "^2.0.3",
     "puppeteer": "^2.1.0"
   }
 }

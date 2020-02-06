@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
+const connectDB = require("./connect");
+connectDB();
 
 const grocery = new schema({
   name: {
@@ -8,12 +10,13 @@ const grocery = new schema({
   type: {
     type: String
   },
+  img: {
+    type: String
+  },
   weight: {
     type: String
   },
-  detail: [{
-    type: JSON
-  }]
+  detail: []
 });
 
 mongoose.model('grocery', grocery);
