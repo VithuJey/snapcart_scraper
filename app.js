@@ -14,36 +14,38 @@ ping = async () => {
 
 // Evaluate & scrape
 ping()
-  .then(page => {
-    let itemsDetails = page.evaluate(() => {
+  .then(async page => {
+    let itemsDetails = await page.evaluate(() => {
       let items = [];
-      let itemJson = {};
 
-      let items = document.querySelectorAll("div[class='col-sm-6']");
+      let itemElements = document.querySelectorAll("div[class='col-sm-6']");
 
-      for (let item of items) {
+      itemElements.forEach(itemElement => {
+        let itemJson = {};
         try {
-          itemJson.name = item.querySelector(
-            "div[class='col-sm-6'] > a > div > div[class='price-cont veg-content'] > div > h3"
-          );
-          if ("vegetable" in URL) itemJson.type = "vegetable";
-          else itemJson.type = "fruit";
+          itemJson.name = itemElement.querySelector("h3").innerHTML;
           itemJson.weight = "1 kg";
           itemJson.date = new Date().getDate();
-          itemJson.price = item.querySelector(
-            "div[class='col-sm-6'] > a > div > div[class='price-cont veg-content'] > div > span[class='price']"
-          );
+          itemJson.price = itemElement.querySelector(
+            "span[class='price']"
+          ).innerHTML;
         } catch (error) {
           console.log(error);
         }
-
         items.push(itemJson);
-      }
+      });
 
-      return itemJson;
+      return items;
     });
-    console.log(itemsDetails);
+    // console.log(itemsDetails);
+
+    
+    if (URL.includes("vegetable")) itemJson.type = "vegetable";
+    else itemJson.type = "fruit";
+
     return itemsDetails;
   })
-  .then((itemsDetails = {}))
+  .then(itemsDetails => {
+    console.log(itemsDetails);
+  })
   .catch(error => console.log(error));
